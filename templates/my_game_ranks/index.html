@@ -19,7 +19,7 @@
 
 <style>
                 body{
-                    background-color: lightblue;
+                    background-color: #004F6B;
                 }
 </style>
 </head>
@@ -45,29 +45,61 @@
 
                 {% block content %} 
 
+                <style>
+                .titlebody{
+                    background-color: #FFFF;
+                }
+                </style>
+                <div class="titlebody">
                 <div class="centerit">
                     <div class="homepagetitle">
                         <h1>Welcome to Game Ranks!</h1>
                         <h3>Rank your favorite games and share them with your friends!<h3>
                     </div>
                 </div>
+                </div>
 
                 {% endblock %} 
 
+                {% block contentimage %} 
+                
+                <div class='centerit'>
 
+                    
+                <div class="container-fluid" >
+
+                    
+                    <img src="https://external-preview.redd.it/HPfVlojudB5Ai93nfuYqaYhoM54Az6Lh97Ire4ye8N8.jpg?auto=webp&s=c8bdc9e146db51ccb97f83b5672c16da93bcc26f" class="img-fluid">
+
+                </div>
+
+
+
+
+                </div>
+                
+                {% endblock %} 
 
 
                 {% block content2 %} 
 
                 <div class="centerit">
                     <style>
-                        .buttonupperpadding{
-                        padding-top: 10%;
+                        .gamebutton{
+                        padding-top: 5%;
                         }
                     </style>
-                    <div class="buttonupperpadding">
-                        <button type="button" class="btn btn-success">View Your Game Rank</button>
+
+
+
+
+                    <div class="gamebutton">
+                        <a href="{% url 'my_game_ranks:gamerank' %}"><button type="button" class="btn btn-success">View Your Game Rank</button>
                         </div>
+
+
+
+
                 </div>
 
                 {% endblock %} 

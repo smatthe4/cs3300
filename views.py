@@ -4,7 +4,14 @@ from django.http import HttpResponse
 
 from django.views import generic
 
+from django.db import models
+from django.urls import reverse 
 
+from my_game_ranks.models import Game
+class GameListView(generic.ListView): 
+      model = Game
+      #def get_absolute_url(self): 
+	   # return reverse('gamerank', args=[str(self.id)])
 
 
 
