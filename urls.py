@@ -30,5 +30,5 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('gamerank/', views.GameListView.as_view(), name= 'gamerank'),
+    path('gamerank/', views.GameListView.as_view(), name='gamerank'),
 ]
