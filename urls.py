@@ -1,3 +1,11 @@
+from . import views 
+from django.urls import path , include
+
+app_name = 'my_game_ranks'
+
+
+
+
 """
 URL configuration for my_game_ranks project.
 
@@ -19,4 +27,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
 ]
