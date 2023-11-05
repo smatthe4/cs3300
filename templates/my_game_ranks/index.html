@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 
 <head>
+
+<title>My Game Ranks</title> 
+
+<meta charset="utf-8" /> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+
+{% load bootstrap5 %} 
+
+{% bootstrap_css %} 
+
+{% bootstrap_javascript %} 
+
+
+
+
 <style>
                 body{
                     background-color: lightblue;
@@ -34,6 +50,24 @@
                         <h1>Welcome to Game Ranks!</h1>
                         <h3>Rank your favorite games and share them with your friends!<h3>
                     </div>
+                </div>
+
+                {% endblock %} 
+
+
+
+
+                {% block content2 %} 
+
+                <div class="centerit">
+                    <style>
+                        .buttonupperpadding{
+                        padding-top: 10%;
+                        }
+                    </style>
+                    <div class="buttonupperpadding">
+                        <button type="button" class="btn btn-success">View Your Game Rank</button>
+                        </div>
                 </div>
 
                 {% endblock %} 
