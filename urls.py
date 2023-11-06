@@ -31,4 +31,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('gamerank/', views.GameListView.as_view(), name='gamerank'),
+    path('game/<int:pk>/', views.GameDetailView.as_view(), name='gamedetail'),
 ]
