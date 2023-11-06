@@ -4,6 +4,8 @@
 
 <title>Game List</title> 
 
+
+
 <meta charset="utf-8" /> 
 
 <meta name="viewport" content="width=device-width, initial-scale=1" /> 
@@ -32,6 +34,8 @@
 
 <h1>Games</h1> 
 
+
+
 {% if game_list %} 
 
 <ul> 
@@ -40,7 +44,7 @@
 
 <li> 
 
-<a href="/game/{{ game.title }}/">{{ game.title }}</a> 
+<a href="/game/{{ game.title }}/"><a class="btn btn-primary" href="{% url 'create_game' game.id %}" role="button">New</a>{{ game.title }}</a> 
 
 </li> 
 

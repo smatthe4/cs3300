@@ -9,7 +9,9 @@ from django.urls import reverse
 
 from my_game_ranks.models import Game
 
+from .forms import GameForm
 
+from django.views.generic.edit import FormView
 
 class GameListView(generic.ListView): 
       model = Game
@@ -19,6 +21,10 @@ class GameListView(generic.ListView):
 class GameDetailView(generic.DetailView): 
       model = Game 
 
+class GameFormView(FormView):
+    template_name = "game_form.html"
+    form_class = GameForm
+    success_url = "/thanks/"
 
 
 def index(request): 
