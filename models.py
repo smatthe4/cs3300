@@ -10,3 +10,4 @@ class Game(models.Model):
 def get_absolute_url(self):
         return reverse('gamedetail', args=[str(self.id)])
 
+#test comment
