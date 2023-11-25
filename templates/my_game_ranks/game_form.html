@@ -1,19 +1,18 @@
-<!-- inherit from base.html -->
-{% extends 'my_game_ranks/index.html' %}
+<!DOCTYPE html>
+
+<div class="container-fluid" >
+
+    <p>Hello</p>
+
+    <form action="/postgame" method="POST">
 
 
-<!-- Replace block content in index.html -->
-{% block content %}
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" name="Submit">
+    </form>
 
-
-<form action="" method="POST">
-
-
-{% csrf_token %}
-<table>
-{{ form.as_table }}
-</table>
-<input type="submit" name="Submit">
-</form>
-
-{% endblock %}
+</div>
+</html>
