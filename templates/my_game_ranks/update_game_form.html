@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<div class="container-fluid" >
+
+    <h1>Update</h1>
+    <h1>{{ game.title }}</h1>
+
+    <form action="{% url 'edit_game' game.id %}" method="POST">
+
+
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" name="Submit">
+        </form>
+
+
+</div>
+</html>

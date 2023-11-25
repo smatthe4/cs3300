@@ -6,3 +6,4 @@ class GameForm(ModelForm):
     class Meta:
         model = Game
         fields =('title', 'picture', 'ranking')
+

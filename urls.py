@@ -33,5 +33,8 @@ urlpatterns = [
     path('gamerank/', views.GameListView.as_view(), name='gamerank'),
     path('game/<int:pk>/', views.GameDetailView.as_view(), name='gamedetail'),
     path('create_game/', views.GameFormView.as_view(), name='create_game'),
-    path('postgame', views.create_game, name='create_game'),
+
+    path('<int:pk>/edit_game', views.UpdateGameView.as_view(), name='edit_game'),
+
+    path('postgame', views.create_game, name='post_game'),
 ]
