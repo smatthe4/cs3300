@@ -36,5 +36,7 @@ urlpatterns = [
 
     path('<int:pk>/edit_game', views.UpdateGameView.as_view(), name='edit_game'),
 
+    path('<int:pk>/delete', views.Delete.as_view(), name='delete'),
+
     path('postgame', views.create_game, name='post_game'),
 ]

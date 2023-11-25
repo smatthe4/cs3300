@@ -42,6 +42,7 @@
 
 <a href="/game/{{ game.id }}/">{{ game.title }}</a> 
 <a href="{% url 'edit_game' game.id %}"><button type="button" class="btn btn-success">Update</button>
+<a href="{% url 'delete' game.id %}"><button type="button" class="btn btn-danger">Delete</button>
 
 </li> 
 

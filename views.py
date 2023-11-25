@@ -18,6 +18,8 @@ from django.shortcuts import redirect
 
 from django.views.generic.edit import UpdateView 
 
+from django.views.generic.edit import DeleteView
+
 class GameListView(generic.ListView): 
       model = Game
       #def get_absolute_url(self): 
@@ -36,6 +38,14 @@ class UpdateGameView(UpdateView):
     model= Game
     fields = ["title","picture","ranking"]
     success_url = "/gamerank/"
+
+class Delete(DeleteView):
+    template_name = "my_game_ranks/delete_game_form.html"
+    model= Game
+    success_url = "/gamerank/"
+
+
+
 
 def index(request): 
 # Render the HTML template index.html with the data in the context variable. 
@@ -65,6 +75,12 @@ def edit_game(request,game_id):
         game = Game.objects.get(pk=game_id)
         game.save()
         return render(request, "my_game_ranks/update_game_form.html", {"form": form})
+
+
+#def delete(request,game_id):
+        #game = Game.objects.get(pk=game_id)
+        #game.delete()
+        #return render(request, "my_game_ranks/delete_game_form.html", {"form": form})
 
 
 
