@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 <head>
-
+<div class=titlewords>
 <title>Game List</title> 
-
+</div>
 <meta charset="utf-8" /> 
 
 <meta name="viewport" content="width=device-width, initial-scale=1" /> 
@@ -18,13 +18,30 @@
 
 
 <style>
+
+
+  .titlewords{
+    background-color:GhostWhite;
+}
+
                 body{
-                    background-color: #004F6B;
+                  padding-top: 5%;
+                    background-color: 	#01182b;
                     text-align: center;
                 }
 ul{
                 list-style-type: none;
 }
+
+
+
+
+links {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
 </style>
 
 
@@ -50,7 +67,7 @@ $( function() {
 
 {% block content %} 
 
-<h1>Game List</h1> 
+
 
 {% if game_list %} 
 
@@ -60,16 +77,22 @@ $( function() {
 {% for game in game_list %}
 
 <li> 
-
+  <div style="background-color: #ffffff">
+    <div class=links>
 <a href="/game/{{ game.id }}/">{{ game.title }}</a>
+    </div>
+<h1></h1> 
 <h1></h1> 
 <img src="{{game.picture}}" alt="photo">
+  
 
 {%if request.user.is_authenticated %}
 <h1></h1> 
 <h1></h1> 
 <a href="{% url 'edit_game' game.id %}"><button type="button" class="btn btn-success">Update</button>
 <a href="{% url 'delete' game.id %}"><button type="button" class="btn btn-danger">Delete</button>
+</div>
+<h1></h1> 
 {% endif %}
 
 </li> 
@@ -100,9 +123,21 @@ $( function() {
 </div>
 
 {%if request.user.is_authenticated %}
-<div>
+<div class="gamebutton">
     <a href="{% url 'create_game' %}"><button type="button" class="btn btn-success">Add Game</button>
 </div>
 {% endif %}
+
+
+<style>
+  .gamebutton{
+  padding-top: 5%;
+  }
+</style>
+
+<div class="gamebutton">
+  <a href="{% url 'index' %}"><button type="button" class="btn btn-success">Home</button>
+  </div>
+
 
 </html>
