@@ -96,17 +96,35 @@
 
 
 
+                {%if request.user.is_authenticated %}
                     <div class="gamebutton">
                         <a href="{% url 'gamerank' %}"><button type="button" class="btn btn-success">View Your Game Rank</button>
                         </div>
 
+                {% else %}
+
+                    <div class="gamebutton">
+                    <a href="{% url 'gamerank' %}"><button type="button" class="btn btn-success">View Game Rank</button>
+                    </div>
+
+                    <div class="gamebutton">
+                        <a href="{% url 'signup' %}"><button type="button" class="btn btn-success">Sign Up!</button>
+                        </div>
+
                         <div class="gamebutton">
-                            <a href="{% url 'signup' %}"><button type="button" class="btn btn-success">Sign Up!</button>
+                            <a href="{% url 'login_view' %}"><button type="button" class="btn btn-success">Log In</button>
                             </div>
 
-                            <div class="gamebutton">
-                                <a href="{% url 'login_view' %}"><button type="button" class="btn btn-success">Log In</button>
+                {% endif %}
+      
+
+
+
+                                {%if request.user.is_authenticated %}
+                                <div class="gamebutton">
+                                    <a href="{% url 'logout_view' %}"><button type="button" class="btn btn-danger">Logout</button>
                                 </div>
+                            {% endif %}
 
                 </div>
 

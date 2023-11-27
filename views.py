@@ -22,7 +22,7 @@ from django.views.generic.edit import DeleteView
 
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm  
 
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 
 
 class GameListView(generic.ListView): 
@@ -61,13 +61,24 @@ def login_view(request):
         form = AuthenticationForm(data=request.POST)
 
         if form.is_valid():
-            #login user
+            #login the user before redirect
+            user=form.get_user()
+            login(request, user)
             return redirect("gamerank/")
 
     else:
         form = AuthenticationForm()
 
     return render( request, 'my_game_ranks/login.html', {"form": form})
+
+
+def logout_view(request):
+
+   #if request.method == "POST":
+        logout(request)
+        return redirect("/")
+
+
 
 
 
