@@ -46,5 +46,7 @@ urlpatterns = [
 
     path('logout_view', views.logout_view, name='logout_view'),
 
+    path('sorttest', views.sorttest, name='sorttest'),
+
     
 ]

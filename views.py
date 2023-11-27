@@ -79,7 +79,8 @@ def logout_view(request):
         return redirect("/")
 
 
-
+def sorttest(request): 
+    return render( request, 'my_game_ranks/sorttest.html')
 
 
 def index(request): 

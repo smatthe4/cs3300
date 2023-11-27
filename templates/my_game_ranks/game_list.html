@@ -22,6 +22,22 @@
                     background-color: #004F6B;
                 }
 </style>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+$( function() {
+  $( "#sortable" ).sortable();
+} );
+</script>
+
+
+
+
+
+
 </head>
 
 
@@ -34,13 +50,15 @@
 
 {% if game_list %} 
 
-<ul> 
 
-{% for game in game_list %} 
+<ul id="sortable">
+
+{% for game in game_list %}
 
 <li> 
 
 <a href="/game/{{ game.id }}/">{{ game.title }}</a> 
+<img src="{{game.picture}}" alt="photo">
 
 {%if request.user.is_authenticated %}
 <a href="{% url 'edit_game' game.id %}"><button type="button" class="btn btn-success">Update</button>
@@ -52,6 +70,17 @@
 {% endfor %} 
 
 </ul> 
+
+
+
+
+
+
+
+
+
+
+
 
 {% else %} 
 
