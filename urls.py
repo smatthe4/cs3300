@@ -39,4 +39,10 @@ urlpatterns = [
     path('<int:pk>/delete', views.Delete.as_view(), name='delete'),
 
     path('postgame', views.create_game, name='post_game'),
+
+    path('signup', views.signup, name='signup'),
+
+    path('login_view', views.login_view, name='login_view'),
+
+    
 ]

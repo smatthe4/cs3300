@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<div class="container-fluid" >
+
+    <h1>Sign Up</h1>
+
+    <form action="{% url 'signup'%}" method="POST">
+
+
+        {% csrf_token %}
+
+            {{form}}
+
+        <input type="submit" name="Submit">
+        </form>
+
+
+</div>
+</html>

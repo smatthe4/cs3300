@@ -20,6 +20,11 @@ from django.views.generic.edit import UpdateView
 
 from django.views.generic.edit import DeleteView
 
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm  
+
+from django.contrib.auth import login
+
+
 class GameListView(generic.ListView): 
       model = Game
       #def get_absolute_url(self): 
@@ -46,11 +51,54 @@ class Delete(DeleteView):
 
 
 
+def login_view(request):
+
+    #form = AuthenticationForm(request.POST)
+
+
+    if request.method == "POST":
+
+        form = AuthenticationForm(data=request.POST)
+
+        if form.is_valid():
+            #login user
+            return redirect("gamerank/")
+
+    else:
+        form = AuthenticationForm()
+
+    return render( request, 'my_game_ranks/login.html', {"form": form})
+
+
 
 def index(request): 
 # Render the HTML template index.html with the data in the context variable. 
    #return HttpResponse('home page') 
     return render( request, 'my_game_ranks/index.html')
+
+
+
+def signup(request): 
+# Render the HTML template index.html with the data in the context variable. 
+   #return HttpResponse('home page') 
+
+
+    if request.method == "POST":
+
+        form = UserCreationForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect("login_view")
+
+    else:
+        form = UserCreationForm()
+
+    return render( request, 'my_game_ranks/signup.html', {"form": form})
+
+
+    
+    
 
 
 def create_game(request):
